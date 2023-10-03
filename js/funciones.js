@@ -4,19 +4,32 @@ function ValidarFormulario()
     var Email = document.getElementById('Email').value;
     var Mensaje = document.getElementById('Mensaje').value;
 
-    if(Nombre == "" || Email == "" || Mensaje == "")
+    if(Nombre == "")
     {
-        alert("Debe escribir algo en los campos!");
+        var Alerta = document.getElementById('alert_nombre').style.display = 'block';
     }
-    else
+    if(Email == "")
     {
-        alert("Bien hecho! Datos correctos..");
+        var Alerta = document.getElementById('alert_email').style.display = 'block';
+    }
+    if(Mensaje == "")
+    {
+        var Alerta = document.getElementById('alert_mensaje').style.display = 'block';
     }
 
-    //Limpiando los campos
-    document.getElementById('Nombre').value = '';
-    document.getElementById('Email').value = '';
-    document.getElementById('Mensaje').value = '';
+    //Ahora lo contrario
+    if(Nombre != "")
+    {
+        var Alerta = document.getElementById('alert_nombre').style.display = 'none';
+    }
+    if(Email != "")
+    {
+        var Alerta = document.getElementById('alert_email').style.display = 'none';
+    }
+    if(Mensaje != "")
+    {
+        var Alerta = document.getElementById('alert_mensaje').style.display = 'none';
+    }
 }
 function VerFechaHora()
 {

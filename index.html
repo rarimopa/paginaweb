@@ -92,16 +92,29 @@
     <footer id="contacto">
         <div class="contenedor">
             <h2 class="titulo">Contact us</h2>
-            <form action="" class="form">
-                <input class="input"  type="text" name="" id="Nombre" placeholder="Nombre" autocomplete="off">
-                <small id="alert_nombre" style="color: blue;" class="form-text d-none font-weight-bold">Debe indicar su nombre.</small>
-                <input class="input"  type="email" name="" id="Email" placeholder="Email" autocomplete="off">
-                <small id="alert_nombre" style="color: blue;" class="form-text d-none font-weight-bold">Debe indicar su nombre.</small>
-                <textarea  class="input" name="" id="Mensaje" cols="30" rows="10" placeholder="Mensaje" autocomplete="off"></textarea>
-                <small id="alert_nombre" style="color: blue;" class="form-text d-none font-weight-bold">Debe indicar su nombre.</small>
-                <button type="button" class="input" id="BtnEnviar" onclick="ValidarFormulario();">Enviar datos</button>
-                <!--<button type="button" class="input" id="BtnConsultar" onclick="VerFechaHora();">Fecha y hora actual</button>-->
-            </form>
+                <div class="row">
+                    <div class="col-6">
+                        <input class="input"  type="text" name="" id="Nombre" placeholder="Nombre" autocomplete="off">
+                        <small id="alert_nombre" style="color: blue; display: none;">Debe indicar su nombre.</small>
+                    </div>
+                    <div class="col-6">
+                        <input class="input"  type="email" name="" id="Email" placeholder="Email" autocomplete="off">
+                        <small id="alert_email" style="color: blue; display: none;">Debe indicar su e-mail.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <textarea  class="input" name="" id="Mensaje" cols="30" rows="10" placeholder="Mensaje" autocomplete="off"></textarea>
+                        <small id="alert_mensaje" style="color: blue; display: none;">Debe indicar el mensaje.</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <di class="col-12">
+                        <button type="button" class="input" id="BtnEnviar" onclick="ValidarFormulario();">Enviar datos</button>
+                        <button type="button" class="input" id="BtnConsultar" onclick="VerFechaHora();">Fecha y hora</button>
+                    </di>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="js/funciones.js"></script>
