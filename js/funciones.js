@@ -4,31 +4,50 @@ function ValidarFormulario()
     var Email = document.getElementById('Email').value;
     var Mensaje = document.getElementById('Mensaje').value;
 
-    if(Nombre == "")
+    if(Nombre == "" || Email == "" || Mensaje == "")
     {
-        var Alerta = document.getElementById('alert_nombre').style.display = 'block';
-    }
-    if(Email == "")
-    {
-        var Alerta = document.getElementById('alert_email').style.display = 'block';
-    }
-    if(Mensaje == "")
-    {
-        var Alerta = document.getElementById('alert_mensaje').style.display = 'block';
-    }
+        if(Nombre == "")
+        {
+            var Alerta = document.getElementById('alert_nombre').style.display = 'block';
+        }
+        if(Email == "")
+        {
+            var Alerta = document.getElementById('alert_email').style.display = 'block';
+        }
+        if(Mensaje == "")
+        {
+            var Alerta = document.getElementById('alert_mensaje').style.display = 'block';
+        }
 
-    //Ahora lo contrario
-    if(Nombre != "")
-    {
-        var Alerta = document.getElementById('alert_nombre').style.display = 'none';
+        //Ahora lo contrario
+        if(Nombre != "")
+        {
+            var Alerta = document.getElementById('alert_nombre').style.display = 'none';
+        }
+        if(Email != "")
+        {
+            var Alerta = document.getElementById('alert_email').style.display = 'none';
+        }
+        if(Mensaje != "")
+        {
+            var Alerta = document.getElementById('alert_mensaje').style.display = 'none';
+        }
     }
-    if(Email != "")
+    else
     {
-        var Alerta = document.getElementById('alert_email').style.display = 'none';
-    }
-    if(Mensaje != "")
-    {
-        var Alerta = document.getElementById('alert_mensaje').style.display = 'none';
+        Swal.fire(
+            'Bien hecho!',
+            'El usuario <b>' + Nombre + '</b> ha sido guardado de manera éxitosa!',
+            'success'
+          )
+         document.getElementById('Nombre').value = '';
+         document.getElementById('Email').value = '';
+         document.getElementById('Mensaje').value = '';
+
+         //Reiniciando las alertas
+         document.getElementById('alert_nombre').style.display = 'none';
+         document.getElementById('alert_email').style.display = 'none';
+         document.getElementById('alert_mensaje').style.display = 'none';
     }
 }
 function VerFechaHora()
@@ -43,5 +62,14 @@ function VerFechaHora()
 
     var HoraCompleta = Hora + ":" + Minuto;
     var FechaCompleta = Día + "/" + Mes + "/" + Año;
-    alert("Fecha: " + FechaCompleta + " hora: " + HoraCompleta);
+    Swal.fire({
+        title: 'Fecha y hora',
+        icon: 'info',
+        html:
+          'Fecha actua: ' + FechaCompleta + " hora: " + HoraCompleta,
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        cancelButtonAriaLabel: 'Thumbs down'
+      })
 }
